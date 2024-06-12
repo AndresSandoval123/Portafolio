@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+:root {
+  --gold: #EDA61C;
+  --black: #000000;
+  --white: #fafafa;
+  --grey:#60605f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+/* Contenedor principal*/
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 1440px;/* Se va adaptar a una resolucion maxima de 1440 por ancho */
+  min-height: 100vh;
+  margin: 0 auto;/* font-family: "Homenaje", sans-serif; */
+  font-family: "LXGW WenKai Mono TC", monospace;
+}
+/* Estilos contenido general */
+.content {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  /* justify-content: space-between; */
+  width: 100%;
+  height: 100vh;
+}
+/* Estilos encabezado */
+.header {
+  display: grid;
+  grid-template-areas: "ico log";
+  grid-template-columns: 10% 70%;
+  position: relative;
+  place-content: center;
+  justify-content: start;
+  width: 100%;
+  height: 100px;
+  padding-left: 10px;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.67) 11.04%);
+}
+/* Estilos logo */
+.logo{
+  display: grid;
+  grid-area: log;
+  place-content: center;
+  width: 100%;
+  z-index: 2;
+}
+.logo img{
+  width: 100%;
+  height: 100px;
+}
+/* Coportamiento menu hamburguesa */
+.nav{
+  display: grid;
+  place-content: center;
+  position: relative;
+  --state-cerrar: scale(0);
+  --state-abrir: scale(1);
+  --state-menu: translate(-100%);
+}
+/* Comportamiento cuando se seleciona */
+.nav:target{
+  --state-cerrar: scale(1);/* se muestra el ico de cerrar y el ico de ham se desaparece */
+  --state-abrir: scale(0);
+  --state-menu: translate(0%);
+}
+.items{
+  background-color:var(--grey);
+  transform: var(--state-menu);
+  display: grid;
+  position: fixed;
+  grid-area: ico;
+  place-content: center;
+  align-content: space-around;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  width: 100%;
+  padding-top: 100px;
+  transition: .8s;
+}
+/* Estilos de la lista */
+.items li{
+  display: flex;
+  place-content: center;
+  align-items: center;
+  list-style: none;
+  width: 150px;
+  height: 40px;
+}
+.items a{ 
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+} 
+.items a:hover{
+  color: var(--gold);
+}
+/* Estilos iconos */
+.icoMenu , .icoCerrar{
+  color: var(--gold);
+  display: grid;
+  grid-area: ico;
+  place-content: center;
+  font-size: 40px;
+  transition: .4s;
+  cursor: pointer;
+}
+.icoMenu{
+  transform: var(--state-abrir);
+}
+.icoCerrar{
+  transform: var(--state-cerrar);
+  position: fixed;
+}
+.contAccion{
+  background-color: var(--gold);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.contAccion a{
+  color: var(--black);
+}
+.contAccion a:hover{
+  color: var(--white);
+}
+
+/* Estilo seccion sobre mi */
+.presentacion{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: center;
+  justify-content: space-around;
+  gap: 10px;
+  height: 322px; 
+}
+.fondo{
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 440px;
+  opacity: 50%;
+  bottom:0;
+  mask-image: linear-gradient(black 80%, transparent);/* Efecto de transpariencia a la img */
+}
+.sobreMi{
+  background: #60605f80;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  width: 90%;
+  height: 200px;
+  text-align: center;
+  border-radius: 10px;
+  gap: 10px;
+}
+/* Estilos seccion tecnologías */
+.tecnologias{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  place-items: center;
+  width: 100%;
+  height: 250px;
+  gap: 5px;
+}
+.tecnologias h2{
+  color: var(--gold);
+}
+.tecCon{
+  display: flex;
+  justify-content: space-around;
+  place-items: center;
+  width: 100%;
+  gap: 5px;
+}
+.carrusel{
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  width: 70%;
+  gap: 20px;
+  overflow: hidden;
+}
+.carrusel p{
+  font-size: 10px;
+}
+.carrusel iconify-icon{
+  font-size:50px;
+  color:var(--white);
+}
+.carrusel :hover{
+  color:var(--gold);
+  transition: .6s;
+}
+.izquierda , .derecha{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  height:40%;
+  font-size: 25px;
+  border-radius: 100%;
+  text-decoration: none;
+  color: var(--white);
+  transition: .4s;
+  transform: scale(1);
+}
+.izquierda :active, .derecha :active{
+  transform: scale(1.5);
+  transition: .4s;
+}
+/* Estilos seccion proyectos */
+.secProyectos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to top, transparent, #60605f 80%, transparent 100%);
+}
+.proyectos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.pro img{
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  filter: grayscale(90%);
+  object-fit: cover;
+  object-position: top;
+  opacity: .8;
+}
+.tex{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 190px;
+  height: 120px;
+  color: var(--white);
+  opacity: 0;
+  gap: 10px;
+  transition: .8s;
+}
+.tex a{
+  text-decoration: none;
+  font-size: 18px;
+  background-color: var(--gold);
+  color: var(--white);
+  border-radius: 10px;
+  width: 80%;
+}
+
+.tex:hover{
+  background-color: var(--grey);
+  opacity: 1;
+  transition: .8s;
+}
+
+.footer {
+  background-color: #EDA61C;
+  height: 20px;
+}
+@media (min-width: 1200px){
+
+}
