@@ -19,6 +19,7 @@ body {
 /* Contenedor principal*/
 .mainContainer {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
@@ -31,10 +32,9 @@ body {
 .content {
   display: flex;
   flex-direction: column;
+  position: relative;
   color: var(--white);
-  /* justify-content: space-between; */
   width: 100%;
-  height: 100vh;
 }
 /* Estilos encabezado */
 .header {
@@ -139,7 +139,6 @@ body {
 .contAccion a:hover{
   color: var(--white);
 }
-
 /* Estilo seccion sobre mi */
 .presentacion{
   position: relative;
@@ -149,16 +148,15 @@ body {
   place-content: center;
   justify-content: space-around;
   gap: 10px;
-  height: 322px; 
+  height: 400px; 
 }
 .fondo{
   position: absolute;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  height: 440px;
+  height: 600px;
   opacity: 50%;
-  bottom:0;
   mask-image: linear-gradient(black 80%, transparent);/* Efecto de transpariencia a la img */
 }
 .sobreMi{
@@ -168,20 +166,27 @@ body {
   flex-direction: column;
   place-content: center;
   width: 90%;
-  height: 200px;
+  height: 300px;
   text-align: center;
   border-radius: 10px;
   gap: 10px;
+}
+.vamos{
+  font-size: 25px;
+  color: var(--gold);
+  z-index: 1;
+  
+  border: solid;
 }
 /* Estilos seccion tecnologías */
 .tecnologias{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   place-items: center;
   width: 100%;
-  height: 250px;
-  gap: 5px;
+  height: 300px;
+  gap: 20px;
 }
 .tecnologias h2{
   color: var(--gold);
@@ -232,23 +237,28 @@ body {
 .secProyectos{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 450px;
   background: linear-gradient(to top, transparent, #60605f 80%, transparent 100%);
 }
-.proyectos{
+.secProyectos h2{
+  color: var(--gold);
   width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+.proyectos{
   display: flex;
   justify-content: center;
-  width: auto;
+  width: 100%;
   flex-wrap: wrap;
   margin-top: 10px;
 }
 .pro img{
   position: absolute;
-  width: 190px;
+  width: 170px;
   height: 120px;
   filter: grayscale(90%);
   object-fit: cover;
@@ -262,7 +272,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 190px;
+  width: 170px;
   height: 120px;
   color: var(--white);
   opacity: 0;
