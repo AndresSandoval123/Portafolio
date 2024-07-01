@@ -5,17 +5,14 @@
   --white: #fafafa;
   --grey:#60605f;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--black);
 }
-
 /* Contenedor principal*/
 .mainContainer {
   display: flex;
@@ -25,8 +22,7 @@ body {
   width: 100vw;
   max-width: 1440px;/* Se va adaptar a una resolucion maxima de 1440 por ancho */
   min-height: 100vh;
-  margin: 0 auto;/* font-family: "Homenaje", sans-serif; */
-  font-family: "LXGW WenKai Mono TC", monospace;
+  margin: 0 auto;  
 }
 /* Estilos contenido general */
 .content {
@@ -84,14 +80,13 @@ body {
   position: fixed;
   grid-area: ico;
   place-content: center;
-  align-content: space-around;
+  align-content: space-evenly;
   text-align: center;
   top: 0;
   left: 0;
-  width: 100vh;
   height: 100vh;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
   transition: .8s;
 }
 /* Estilos de la lista */
@@ -150,6 +145,7 @@ body {
   gap: 10px;
   height: 400px; 
 }
+/* fondo */
 .fondo{
   position: absolute;
   width: 100%;
@@ -174,9 +170,7 @@ body {
 .vamos{
   font-size: 25px;
   color: var(--gold);
-  z-index: 1;
-  
-  border: solid;
+  z-index: 1;  
 }
 /* Estilos seccion tecnologías */
 .tecnologias{
@@ -191,14 +185,14 @@ body {
 .tecnologias h2{
   color: var(--gold);
 }
-.tecCon{
+.tecContenido{
   display: flex;
   justify-content: space-around;
   place-items: center;
-  width: 100%;
+  width: 90%;
   gap: 5px;
 }
-.carrusel{
+.slaider{
   display: flex;
   justify-content: start;
   text-align: center;
@@ -206,14 +200,14 @@ body {
   gap: 20px;
   overflow: hidden;
 }
-.carrusel p{
+.slaider p{
   font-size: 10px;
 }
-.carrusel iconify-icon{
+.slaider iconify-icon{
   font-size:50px;
   color:var(--white);
 }
-.carrusel :hover{
+.slaider :hover{
   color:var(--gold);
   transition: .6s;
 }
@@ -237,10 +231,10 @@ body {
 .secProyectos{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 450px;
+  height: 500px;
+  gap: 20px;
   background: linear-gradient(to top, transparent, #60605f 80%, transparent 100%);
 }
 .secProyectos h2{
@@ -249,55 +243,331 @@ body {
   padding-top: 20px;
   text-align: center;
 }
+.secProyectos p{
+  width: 100%;
+  padding: 0 20px 0; 
+  text-align: center;
+}
 .proyectos{
   display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
   justify-content: center;
   width: 100%;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  height: 100%;
+}
+.pro{
+  width: 50%;
+  height: 30%;
+  position: relative;
 }
 .pro img{
   position: absolute;
-  width: 170px;
-  height: 120px;
-  filter: grayscale(90%);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
   opacity: .8;
+  filter: grayscale(0.6);
 }
 .tex{
-  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 170px;
-  height: 120px;
   color: var(--white);
   opacity: 0;
-  gap: 10px;
   transition: .8s;
+  position: relative; 
+  font-size: 25px;
+  gap: 20px;
 }
 .tex a{
   text-decoration: none;
   font-size: 18px;
-  background-color: var(--gold);
+  background-color: var(--grey);
   color: var(--white);
   border-radius: 10px;
-  width: 80%;
+  width: 60%;
 }
-
 .tex:hover{
-  background-color: var(--grey);
+  background-color: var(--gold);
   opacity: 1;
-  transition: .8s;
+  transition: .3s;
+}
+/* Cuarta seccion Formulario */
+.contacto{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 480px;
+}
+.fondoFor{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  object-fit: cover;
+  z-index: -1;
+}
+.formulario{
+  position: relative;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-left: 10px;
+/*   background-color: #60605f4d;
+  backdrop-filter: blur(2px); */
+}
+.nombre,.correo,.asunto,.mensaje{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+  position: relative;
+}
+.formulario input, .formulario textarea{
+  margin-bottom: 20px;
+  height: 100%;
+  width: 80%;
+  padding-left: 3%;
+  border: none;
+  outline: none;/* Elimina lineas de seleccion  */
+  background: linear-gradient(90deg, rgba(171, 185, 190, 0.20) 0%, rgba(79, 86, 88, 0.00) 70%);/* aplica degrade a 90 grados, seguido  */
+  color: var(--white);
+  border-radius: 10px;
+}
+.formulario input{
+  height: 35px;
+}
+.formulario textarea{
+  padding: 15px;
+}
+.formulario label{
+  position: absolute;
+  top: 15%;
+  left: 3%;
+}
+.mensaje label{
+  top: 5%;
+}
+/* animacion para los input's */
+.nombre input:focus ~ label,.nombre input:valid ~ label, .correo input:focus ~ label, .correo input:valid ~ label, .asunto input:focus ~ label, .asunto input:valid ~ label, .mensaje textarea:focus ~ label, .mensaje textarea:valid ~ label{
+  transform: translateY(-28px);
+  transition: .3s;
 }
 
+/* boton */
+.enviar{
+  position: relative;
+  left: 31%;
+  text-align: center;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--gold);
+}
+.enviar input{
+  background: unset;
+  padding-left: unset;
+  border-radius: unset;
+  width: 100%;
+  color: var(--black);
+  height: 100%;
+}
+/* Footer */
 .footer {
-  background-color: #EDA61C;
-  height: 20px;
+  background-color: var(--grey);
+  height: auto;
+  color: var(--gold);
+  align-items: center;
+}
+.icoFooter{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.icoFooter a{
+  font-size: 40px;
+  color: var(--gold);
+  opacity: 0.9;
+}
+@media (min-width: 768px){
+/* encabezado */
+.header{
+  display: flex;
+  justify-content: center;
+}
+/* estilos del nav */
+.nav{
+  display: unset;
+  position: unset;
+  width: 100%;
+}
+.items{
+  background-color: unset;
+  display: flex;
+  justify-content: space-around;
+  position: unset;
+  transform: unset;
+  height: unset;
+  padding-top: unset;
+  transition: unset;
+  width: 100%;
+}
+/* Estilos iconos nav */
+.icoMenu , .icoCerrar{
+display: none;
+}
+/* Estilos de la lista */
+.items li{
+  display: flex;
+  width: auto;
+  margin: 10px;
+}
+/* estilo boton contactame */
+.contAccion a{
+  width: 150px;
+}
+/* Estilos logo */
+.logo{
+  display: flex;
+  width: 20%;
+}
+.logo img{
+  height: 100%;
+}
+/* Seccion sobre mi */
+.sobreMi h1{
+  font-size: 35px;
+}
+.sobreMi p{
+  font-size: 20px;
+}
+/* Estilos seccion tecnologías */
+.tecnologias {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 50px;
+}
+.tecnologias h2{
+  font-size: 25px;
+}
+.slaider p{
+  font-size: 12px;
+}
+.slaider iconify-icon{
+  font-size:60px;
+}
+/* Estilos seccion proyectos */
+.secProyectos{
+  height: 700px;
+}
+.secProyectos h2{
+  font-size: 25px;
+}
+.tex{
+  font-size: 28px;
+}
+.tex a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 18%;
+}
+/* Cuarta seccion Formulario */
+.contacto{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 480px;
+}
+.fondoFor{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  object-fit: cover;
+}
+.formulario{
+  width: 70%;
+  right: 13%;
+  background: linear-gradient(90deg, rgba(171, 185, 190, 0.20) 0%, rgba(79, 86, 88, 0.00) 100%);/* aplica degrade a 90 grados, seguido  */
+  border-radius: 10px ;
+}
+/* boton */
+.enviar{
+  left: 25%;
+  width: 25%;
+}
+/* Footer */
+.icoFooter{
+  justify-content: center;
+  gap: 20px;
+}
+}
+@media (min-width: 1024px){
+/* Estilo seccion sobre mi */
+.sobreMi{
+  background: linear-gradient(180deg, rgba(171, 185, 190, 0.20) 0%, rgba(79, 86, 88, 0.00) 100%);/* aplica degrade a 90 grados, seguido  */
+  backdrop-filter: blur(2px);
+  width: 80%;
+  padding: 0px 50px 0px;
+}
+/* Estilos seccion proyectos */
+.secProyectos{
+  height: 900px;
+}
+/* seccion contactame */
+/* Cuarta seccion Formulario */
+.contacto{
+  height: 580px;
+}
+/* boton */
+.enviar{
+  left: 20%;
+  width: 20%;
+}
 }
 @media (min-width: 1200px){
-
+.tecnologias{
+  height: 400px;
+}
+.tecContenido{
+  width: 70%;
+  height: 140px;
+}
+.tecnologias h2{
+  font-size: 30px;
+}
+/* Estilos seccion proyectos */
+.secProyectos{
+  height: 1200px;
+}
+.proyectos{
+  width: 90%;
+}
+.secProyectos h2{
+  font-size: 30px;
+}
+/* seccion contactame */
+/* boton */
+.enviar{
+  left: 15%;
+  width: 15%;
+}
 }

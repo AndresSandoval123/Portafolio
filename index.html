@@ -11,83 +11,89 @@
 </head>
 <body>
   <main class="mainContainer">
-    <header class="header">
-      <div class="logo">
-        <a href="#"><img src="https://i.postimg.cc/QNQQfGkx/A-Post-en-Instagram-8-1.png" alt="Logo"></a>
+
+    <header class="header"><!-- Encabezado -->
+      <div class="logo"><!-- loco -->
+        <a href="index.html"><img src="https://i.postimg.cc/QNQQfGkx/A-Post-en-Instagram-8-1.png" alt="Logo"></a>
       </div>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav"><!-- Barra de navegacion -->
         <ul class="items">
-          <li><a href="#">SOBRE MI</a></li>
-          <li><a href="#">TECNOLOGÍAS</a></li>
-          <li><a href="#">PROYECTOS</a></li>
-          <li class="contAccion"><a href="#">CONTÁCTAME</a></li>
+          <li><a href="#presentacion">SOBRE MI</a></li>
+          <li><a href="#tecnologias">TECNOLOGÍAS</a></li>
+          <li><a href="#secProyectos">PROYECTOS</a></li>
+          <li class="contAccion"><a href="#contacto">CONTÁCTAME</a></li>
         </ul>
+        <!-- Iconos del menu amburguesa -->
         <a class="icoMenu" href="#nav"><i class="bi bi-list"></i></a>
         <a class="icoCerrar" href="#"><i class="bi bi-x-lg"></i></a>
       </nav>
     </header>
     <div class="content">
-      <section class="presentacion">
+      <!-- Primera seccion "Presentacion" -->
+      <section class="presentacion" id="presentacion">
         <img class="fondo" src="https://i.postimg.cc/htCmwVG2/960x0.webp" alt="fondo">
-        <div class="sobreMi">
-          <h1>¡HOLA! <br>Soy Andres Felipe Sandoval</h1>
+        <div class="sobreMi"><!-- Seccion sobre mi -->
+          <h1>¡HOLA! <br><span>Soy Andres Felipe Sandoval</span></h1>
           <p>Apasionado por el desarrollo web.
             Durante este recorrido, te daré a conocer un poco más de mí, los proyectos que estoy desarrollando y en los que he participado.</p>
         </div>
-        <div class="vamos">
-          <p>¡Vamos!</p>
+        <div class="vamos"> <!-- spam  -->
+          <samp>¡Vamos!</samp>
         </div>
       </section>
-      <section class="tecnologias">
+      <!-- Segunda seccion "Tecnologias" -->
+      <section class="tecnologias" id="tecnologias">
         <div class="tituloTec">
           <h2>TECNOLOGÍAS CONOCIDAS</h2>
         </div>
-        <div class="tecCon">
-        <a class="izquierda" id="izquierda" href=""><i class="bi bi-chevron-left"></i></a>
-        <div class="carrusel" id="carrusel">
-          <div class="itemCarru ">
+        <div class="tecContenido"> <!-- slaider -->
+        <a class="izquierda" id="izquierda" href="#"><i class="bi bi-chevron-left"></i></a>
+        <div class="slaider" id="slaider">
+          <div class="itemSlaider ">
             <iconify-icon icon="flowbite:html-solid"></iconify-icon>
             <p>HTML</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="flowbite:css-solid"></iconify-icon>
             <p>CSS</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="cib:js"></iconify-icon>
-            <p>JavaScrip</p>
+            <p>Javascript</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="ri:java-fill"></iconify-icon>
             <p>Java</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="hugeicons:adobe-photoshop"></iconify-icon>
             <p>Photoshop</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="solar:figma-bold"></iconify-icon>
             <p>figma</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="mdi:bootstrap"></iconify-icon>
             <p>Bootstrap</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="mdi:bootstrap"></iconify-icon>
             <p>Bootstrap</p>
           </div>
-          <div class="itemCarru ">
+          <div class="itemSlaider ">
             <iconify-icon icon="flowbite:html-solid"></iconify-icon>
             <p>HTML</p>
           </div>
         </div>
-        <a class="derecha" id="derecha" href=""><i class="bi bi-chevron-right"></i></a>
+        <a class="derecha" id="derecha" href="#"><i class="bi bi-chevron-right"></i></a>
       </div>
       </section>
-      <section class="secProyectos">
+      <!-- Tercera seccion proyectos desarrollados -->
+      <section class="secProyectos" id="secProyectos">
         <h2>PROYECTOS</h2>
-        <div class="proyectos">
+        <p>Selecciona el proyecto para obtener más información sobre él.</p>
+        <div class="proyectos"><!-- Proyectos -->
         <div class="pro">
           <img src="https://i.postimg.cc/k46g3kTD/app.jpg" alt="Diseño de publicidad">
           <div class="tex">
@@ -137,13 +143,50 @@
         </div>
       </div>
       </section>
-      <section class="contacto"></section>
+      <!-- Cuarta seccion Formulario -->
+      <section class="contacto" id="contacto">
+        <h2>CONTÁCTAME</h2>
+        <img class="fondoFor" src="https://i.postimg.cc/QMH7rV9h/mejorada.jpg" alt="contactoimg">
+        <form action="" class="formulario" autocomplete="off"> <!-- Formulario -->
+          
+          <div class="nombre">
+          <input type="text" name="nombre" id="nombre" required>
+          <label for="nombre">Nombre</label>
+          </div>
+
+          <div class="correo">
+          <input type="email" name="email" id="email" required>
+          <label for="email">Correo</label>
+          </div>
+
+          <div class="asunto">
+          <input type="text" name="asunto" id="asunto" required>
+          <label for="asunto">Asunto</label>
+          </div>
+
+          <div class="mensaje">
+          <textarea name="mensaje" id="mensaje" rows="7" required></textarea>
+          <label for="mensaje">Mensaje</label>
+          </div>
+
+          <div class="enviar">
+            <input type="submit" value="Enviar">
+          </div>
+
+        </form>
+      </section>
     </div>
+    <!-- Footer -->
     <footer class="footer">
+      <div class="icoFooter">
+        <a href="https://www.linkedin.com/in/andres-sandoval-desarrollador/" target="_blank" ><iconify-icon icon="mingcute:linkedin-fill"></iconify-icon></a>
+        <p>Creador AS</p>
+        <a href="https://github.com/AndresSandoval123" target="_blank"><iconify-icon icon="mdi:github"></iconify-icon></a>
+      </div>
     </footer>
   </main>
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script> <!-- iconos especiales -->
-  <script src="/app.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
