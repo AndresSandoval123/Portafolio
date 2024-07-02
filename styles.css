@@ -5,12 +5,15 @@
   --white: #fafafa;
   --grey:#60605f;
 }
+html {
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+  scroll-behavior: smooth;
   background-color: var(--black);
 }
 /* Contenedor principal*/
@@ -153,7 +156,7 @@ body {
   object-fit: cover;
   object-position: center;
   height: 600px;
-  opacity: 50%;
+  opacity: 0.6;
   mask-image: linear-gradient(black 80%, transparent);/* Efecto de transpariencia a la img */
 }
 .sobreMi{
@@ -172,6 +175,11 @@ body {
   font-size: 35px;
   color: var(--white);
   z-index: 1;  
+}
+.vamos:hover{
+  color: var(--gold);
+  transition: .4s ease-out;
+  transform: scale(1.5);
 }
 /* Estilos seccion tecnologías */
 .tecnologias{
@@ -210,13 +218,13 @@ body {
 .slaider p{
   font-size: 10px;
 }
-.slaider iconify-icon{
-  font-size:50px;
-  color:var(--white);
+.slaider img{
+  width: 100%;
+  object-fit: cover;
 }
 .slaider :hover{
   color:var(--gold);
-  transition: .6s;
+  filter: grayscale(163%) brightness(-30%) invert(82%) sepia(17) saturate(575%) hue-rotate(314deg);/* Permite el cambio de color ala imagen */
   transform: scale(1.2);
 }
 .izquierda , .derecha{
@@ -305,7 +313,7 @@ body {
 .tex:hover{
   background-color: var(--gold);
   opacity: 1;
-  transition: .3s;
+  transition: .5s;
 }
 /* Cuarta seccion Formulario */
 .contacto{
