@@ -1,41 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const slaider = document.getElementById("slaider"),
-    itemSlaider = document.querySelectorAll(".itemSlaider"),
-    izquierda = document.getElementById("izquierda"),
-    derecha = document.getElementById("derecha");
+let currentIndex = 0; /* se define un indice de inicio */
+function navegar(direccion){
+    const slaider = document.getElementById("slaider");
+    const itemSlaider = document.querySelectorAll(".itemSlaider");
+    
+    currentIndex = (currentIndex + direccion + itemSlaider.length) % itemSlaider.length;
+    const offset = currentIndex * -8;
+    
+    slaider.style.transform = `translateX(${offset}%)`;
+    
+    console.log(offset);
+}
 
-
-  let inicio = 0;
-  const itemSlaiderAncho = itemSlaider[0].offsetWidth;
-  const intervalo = 2000;
-
-
-  function siguienteSlide() {
-    inicio++;
-    if (inicio >= itemSlaider.length) {
-      inicio = 0;
-    }
-    moverCarrusel();
-  }
-
-  function anteriorSlide() {
-    inicio--;
-    if (inicio < 0) {
-      inicio = itemSlaider.length - 1;
-    }
-    moverCarrusel();
-  }
-
-  function moverCarrusel() {
-    const posicion = -inicio * itemSlaiderAncho;
-    slaider.style.transition = 'transform 0.8s ease';
-    slaider.style.transform = `translateX(${posicion}px)`;
-  }
-
-  setInterval(siguienteSlide, intervalo); 
-  moverCarrusel();
-  
-  derecha.addEventListener('click', siguienteSlide);
-  izquierda.addEventListener('click', anteriorSlide);
-
+/* Se realiza eventos a los botones y se le da la funcion navegar */
+document.getElementById("izquierda").addEventListener("click", ()=> {
+    navegar(-1);
 });
+
+document.getElementById("derecha").addEventListener("click", ()=> {
+    navegar(1);
+});
+/* Se incia en 0 para generar el desplazamiento automatico */
+let automatico = 0;
+
+/* Funcion para hacer el recorrido automatico */
+function inicio(interval) {
+   stop(); // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
+    navegacion = setInterval(() => {
+    navegar(1); // Navega al siguiente item cada intervalo de tiempo.
+    }, interval);
+}
+function stop() {
+   clearInterval(automatico);
+}
+// Iniciar autoplay con un intervalo de 3 segundos.
+inicio(3000);

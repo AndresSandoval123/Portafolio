@@ -168,8 +168,8 @@ body {
   gap: 10px;
 }
 .vamos{
-  font-size: 25px;
-  color: var(--gold);
+  font-size: 35px;
+  color: var(--white);
   z-index: 1;  
 }
 /* Estilos seccion tecnologías */
@@ -181,7 +181,7 @@ body {
   width: 100%;
   height: 300px;
   position: relative;
-  gap: 20px;
+  gap: 10px;
 }
 .tecnologias h2{
   color: var(--gold);
@@ -191,15 +191,17 @@ body {
   justify-content: start;
   place-items: center;
   width: 80%;
-  gap: 5px;
+  height: 50%;
   overflow: hidden;
 }
 .slaider{
   display: flex;
   justify-content: start;
+  align-items: center;
   text-align: center;
+  height: 100%;
   gap: 25px;
-  position: relative;
+  transition: .8s;
 }
 .itemSlaider{
   z-index: 0;
@@ -214,11 +216,12 @@ body {
 .slaider :hover{
   color:var(--gold);
   transition: .6s;
+  transform: scale(1.2);
 }
 .izquierda , .derecha{
   position: absolute;
+  background-color: transparent;
   color: var(--white);
-  background: transparent;
   font-size: 25px;
   border: none;
 }
@@ -230,10 +233,9 @@ body {
   left: 1%;
   z-index: 1;
 }
-/* .izquierda :active, .derecha :active{
+.izquierda :active, .derecha :active{
   transform: scale(1.5);
-  transition: .4s;
-} */
+}
 /* Estilos seccion proyectos */
 .secProyectos{
   display: flex;
@@ -467,6 +469,15 @@ display: none;
   gap: 20px;
   padding-top: 50px;
 }
+.tecContenido{
+  width: 60%;
+}
+.derecha{
+  right: 15%;
+}
+.izquierda{
+  left: 15%;
+}
 .tecnologias h2{
   font-size: 25px;
 }
@@ -529,17 +540,26 @@ display: none;
 }
 @media (min-width: 1024px){
 /* Estilo seccion sobre mi */
+.presentacion{
+  gap: 10px;
+  height: 500px; 
+}
+/* fondo */
+.fondo{
+  height: 710px;
+}
 .sobreMi{
   background: linear-gradient(180deg, rgba(171, 185, 190, 0.20) 0%, rgba(79, 86, 88, 0.00) 100%);/* aplica degrade a 90 grados, seguido  */
   backdrop-filter: blur(2px);
   width: 80%;
   padding: 0px 50px 0px;
 }
+/* Estilos seccion tecnologías */
+
 /* Estilos seccion proyectos */
 .secProyectos{
   height: 900px;
 }
-/* seccion contactame */
 /* Cuarta seccion Formulario */
 .contacto{
   height: 580px;
@@ -551,16 +571,18 @@ display: none;
 }
 }
 @media (min-width: 1200px){
+
+  /* Estilos seccion tecnologías */
 .tecnologias{
   height: 400px;
 }
 .tecContenido{
-  width: 70%;
   height: 140px;
 }
 .tecnologias h2{
   font-size: 30px;
 }
+
 /* Estilos seccion proyectos */
 .secProyectos{
   height: 1200px;
@@ -578,12 +600,3 @@ display: none;
   width: 15%;
 }
 }
-
-/* @keyframes move {
-  0%, 100% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(-800%);
-  }
-} */
