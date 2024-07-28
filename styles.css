@@ -4,6 +4,23 @@
   --black: #000000;
   --white: #fafafa;
   --grey:#60605f;
+  --h1-movil: 36px;
+  --h2-movil: 30px;
+  --h3-movil: 25px;
+  --h4-movil: 21px;
+  --h5-movil: 17px;
+  --parrafo-movil: 12px;
+  --h1-desktop: 48px;
+  --h2-desktop: 40px;
+  --h3-desktop: 33px;
+  --h4-desktop: 28px;
+  --h5-desktop: 23px;
+  --parrafo-desktop: 16px;
+  --slaider-width: 90%;/* ancho del slaider contenedor */
+  --slaider-height: 20vh;/* alto del slaider contenedor */
+  --slaider-elemento-displayed: 3;/* Elementos vistos dentro del slaider */
+  --slaider-element-width: calc(var(--slaider-width) / var(--slaider-elemento-displayed));
+  --animacion: 25s;
 }
 * {
   margin: 0;
@@ -135,6 +152,17 @@ body {
 .contAccion a:hover{
   color: var(--white);
 }
+/* fondo */
+.fondo{
+  position: absolute;
+  bottom:50px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 550px;
+  opacity: 0.5;
+  mask-image: linear-gradient(black 80%, transparent);/* Efecto de transpariencia a la img */
+}
 /* Estilo seccion sobre mi */
 .presentacion{
   position: relative;
@@ -144,36 +172,56 @@ body {
   place-content: center;
   justify-content: space-around;
   gap: 10px;
-  height: 400px; 
-}
-/* fondo */
-.fondo{
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  height: 600px;
-  opacity: 0.6;
-  mask-image: linear-gradient(black 80%, transparent);/* Efecto de transpariencia a la img */
+  height: 450px;
 }
 .sobreMi{
-  background: #60605f80;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, rgb(23 24 24 / 75%) 90%, rgba(79, 86, 88, 0) 100%);/* aplica degrade a 90 grados, seguido  */
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.85);
   display: flex;
   flex-direction: column;
   place-content: center;
   width: 90%;
-  height: 300px;
+  height: 200px;
   text-align: center;
   border-radius: 10px;
   gap: 10px;
+  z-index: 1;
 }
-.vamos{
-  font-size: 35px;
+.sobreMi h1{
+  font-size: var(--h1-movil);
+  color: var(--gold);
+}
+.sobreMi h1 span{
   color: var(--white);
-  z-index: 1;  
 }
-.vamos:hover{
+.sobreMi p{
+  font-size: var(--h4-movil);
+  color: var(--gold);
+}
+.frases{
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  height: 30px;
+  position: relative;
+  font-size: var(--h4-movil);
+}
+.frase {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+/* Estilo para mostrar el item activo  */
+.frase.active {
+  opacity: 1;
+}
+.comencemos {
+  font-size: var(--h3-movil);
+  color: var(--white);
+}
+.comencemos :hover{
   color: var(--gold);
   transition: .4s ease-out;
   transform: scale(1.5);
@@ -190,57 +238,42 @@ body {
   gap: 10px;
 }
 .tecnologias h2{
+  font-size: var(--h2-movil);
+  text-align: center;
   color: var(--gold);
 }
-.tecContenido{
-  display: flex;
-  justify-content: start;
-  place-items: center;
-  width: 80%;
-  height: 50%;
+.tecContenido {
+  width: var(--slaider-width);
+  height: var(--slaider-height);
+  color: var(--white);
   overflow: hidden;
+  position: relative;
 }
-.slaider{
+.slaider {
+  list-style: none;
+  height: 100%;
   display: flex;
-  justify-content: start;
+  animation: desplazar var(--animacion) linear infinite;
+}
+.slaider:hover {/* Permite pausar la animación al hacer hover */
+  animation-play-state: paused;
+}
+.slaider li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100%;
-  gap: 25px;
-  transition: .8s;
+  flex-shrink: 0;
+  width: var(--slaider-element-width);
+  white-space: nowrap;
+  transition: all .2s;
 }
-.itemSlaider{
-  z-index: 0;
+.slaider li img {
+  width: 50%;
 }
-.slaider p{
-  font-size: 10px;
-}
-.slaider img{
-  width: 100%;
-  object-fit: cover;
-}
-.slaider :hover{
-  color:var(--gold);
-  filter: grayscale(163%) brightness(-30%) invert(82%) sepia(17) saturate(575%) hue-rotate(314deg);/* Permite el cambio de color ala imagen */
+.slaider li:hover {
   transform: scale(1.2);
-}
-.izquierda , .derecha{
-  position: absolute;
-  background-color: transparent;
-  color: var(--white);
-  font-size: 25px;
-  border: none;
-}
-.derecha{
-  right: 1%;
-  z-index: 1;
-}
-.izquierda{
-  left: 1%;
-  z-index: 1;
-}
-.izquierda :active, .derecha :active{
-  transform: scale(1.5);
 }
 /* Estilos seccion proyectos */
 .secProyectos{
@@ -248,69 +281,147 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 620px;
   gap: 20px;
   background: linear-gradient(to top, transparent, #60605f 80%, transparent 100%);
 }
 .secProyectos h2{
   color: var(--gold);
+  font-size: var(--h2-movil);
   width: 100%;
   padding-top: 20px;
   text-align: center;
 }
 .secProyectos p{
+  font-size: var(--h4-movil);
+  color: var(--white);
   width: 100%;
   padding: 0 20px 0; 
   text-align: center;
 }
 .proyectos{
   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
-  height: 100%;
+  height: 400px;
+  overflow: hidden;
 }
-.pro{
-  width: 50%;
-  height: 30%;
+.carrusel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
   position: relative;
 }
-.pro img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  opacity: .8;
-  filter: grayscale(0.6);
+.atras iconify-icon, .adelante iconify-icon{
+  font-size: 30px;
+  border-radius: 100%;
+  color: var(--white);
+  transition: all .10s;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.tex{
-  height: 100%;
+.atras iconify-icon:active, .adelante iconify-icon:active{
+  transform: scale(1.2);
+  outline: 1px solid;
+  outline-offset: 10px;
+  outline-color: rgba(255, 255, 255, 0);
+}
+.conImg{
+  position: relative;
+  top: 108px;
+  height: 350px;
+}
+.imagenes{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  color: var(--white);
-  opacity: 0;
-  transition: .8s;
-  position: relative; 
-  font-size: 25px;
-  gap: 20px;
+  justify-content: end;
+  width: 80%;
+  height: 10%;
 }
-.tex a{
-  text-decoration: none;
-  font-size: 18px;
+.img{
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.85);
+  height: 280px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 5px;
+  bottom: 5%;
+  position: relative;
+  object-fit: cover;
+}
+.texto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  transform: translateY(0px);
+  background-color: rgba(128, 128, 128, 0.821);
+  border-radius: 10px 10px 0 0;
+  bottom:0px;
+}
+.texto h3{
+  font-size: var(--h3-movil);
+  color: var(--gold);
+}
+.texto p{
+  align-items: center;
+  font-size: 0px;
+}
+.imagenes .texto{
+  width: 100%;
+  height: 50px;
+  transition: 1s;
+  cursor: pointer;
+}
+.imagenes:hover .texto{
+  /* transform: translateY(-150px); */
+  height: 140px;
+  background-color: #1c1c1be9;
+  cursor: pointer;
+}
+.imagenes:hover .texto p{
+  font-size: var(--h5-movil);
+  width: 80%;
+}
+.puntos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+.puntos p{
+  font-size: 100px;
+  margin-top: -50px;
+  color: var(--white);
+  padding: 0 5px;
+}
+.puntos .bold{
+  color: var(--gold);
+}
+.btnTProyectos{
   background-color: var(--grey);
   color: var(--white);
-  border-radius: 10px;
-  width: 60%;
+  width: 200px;
+  height: 35px;
+  font-size: var(--h5-movil);
+  text-decoration: none;
+  border-radius: 15px;
+  text-align: center;
+  place-content: center;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.tex:hover{
-  background-color: var(--gold);
-  opacity: 1;
-  transition: .5s;
+.btnTProyectos:hover{
+  color: var(--gold);
+  outline: 1px solid;
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
 }
 /* Cuarta seccion Formulario */
 .contacto{
@@ -322,6 +433,10 @@ body {
   gap: 10px;
   height: 480px;
 }
+.contacto h2{
+  font-size: var(--h2-movil);
+  color: var(--white);
+}
 .fondoFor{
   position: absolute;
   width: 100%;
@@ -329,6 +444,7 @@ body {
   opacity: 0.5;
   object-fit: cover;
   z-index: -1;
+  mask-image: linear-gradient(0deg, black 71%, transparent);
 }
 .formulario{
   position: relative;
@@ -370,6 +486,8 @@ body {
   position: absolute;
   top: 15%;
   left: 3%;
+  color: var(--white);
+  font-size: var(--h5-movil);
 }
 .mensaje label{
   top: 5%;
@@ -387,35 +505,61 @@ body {
   width: 30%;
   height: 30px;
   border-radius: 10px;
-  background: var(--gold);
+  background: var(--grey);
+  
 }
 .enviar input{
   background: unset;
   padding-left: unset;
   border-radius: unset;
   width: 100%;
-  color: var(--black);
+  color: var(--white);
   height: 100%;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
+.enviar input:hover{
+  color: var(--gold);
+  outline: 1px solid;
+  border-radius: 10px;
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
+}
+.enviar input:active{
+  transform: scale(1.5);
+}
+
 /* Footer */
 .footer {
   background-color: var(--grey);
   height: auto;
   color: var(--gold);
-  align-items: center;
-}
-.icoFooter{
-  justify-content: center;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
-.icoFooter a{
+.aIconos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 40px;
+}
+.aIconos iconify-icon{
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.aIconos a{
   color: var(--gold);
-  opacity: 0.9;
+}
+.aIconos iconify-icon:hover{
+  outline: 1px solid;
+  border-radius: 100%;
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
 }
 @media (min-width: 768px){
+:root{
+  --slaider-elemento-displayed: 5;/* Elementos vistos dentro del slaider */
+}
 /* encabezado */
 .header{
   display: flex;
@@ -462,52 +606,21 @@ display: none;
 }
 /* Seccion sobre mi */
 .sobreMi h1{
-  font-size: 35px;
+  font-size: var(--h1-movil);
 }
 .sobreMi p{
-  font-size: 20px;
+  font-size: var(--h4-movil);
 }
 /* Estilos seccion tecnologías */
 .tecnologias {
-  display: flex;
-  justify-content: center;
   gap: 20px;
-  padding-top: 50px;
-}
-.tecContenido{
-  width: 60%;
-}
-.derecha{
-  right: 15%;
-}
-.izquierda{
-  left: 15%;
-}
-.tecnologias h2{
-  font-size: 25px;
-}
-.slaider p{
-  font-size: 12px;
-}
-.slaider iconify-icon{
-  font-size:60px;
 }
 /* Estilos seccion proyectos */
-.secProyectos{
-  height: 700px;
+.texto{
+  border-radius: 10px;
 }
-.secProyectos h2{
-  font-size: 25px;
-}
-.tex{
-  font-size: 28px;
-}
-.tex a{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  height: 18%;
+.imagenes .texto{
+  width: 80%;
 }
 /* Cuarta seccion Formulario */
 .contacto{
@@ -554,16 +667,20 @@ display: none;
   height: 710px;
 }
 .sobreMi{
-  background: linear-gradient(180deg, rgba(171, 185, 190, 0.20) 0%, rgba(79, 86, 88, 0.00) 100%);/* aplica degrade a 90 grados, seguido  */
-  backdrop-filter: blur(2px);
-  width: 80%;
-  padding: 0px 50px 0px;
+  width: 50%;
 }
-/* Estilos seccion tecnologías */
-
 /* Estilos seccion proyectos */
 .secProyectos{
-  height: 900px;
+  height: 800px;
+}
+.proyectos{
+  height: 600px;
+}
+.carrusel{
+  height: 100%;
+}
+.img{
+  height: 400px;
 }
 /* Cuarta seccion Formulario */
 .contacto{
@@ -576,45 +693,48 @@ display: none;
 }
 }
 @media (min-width: 1200px){
+:root{
+  --slaider-elemento-displayed: 7/* Elementos vistos dentro del slaider */
+}
   /* Estilos seccion tecnologías */
 .tecnologias{
   height: 400px;
 }
-.tecContenido{
-  height: 140px;
-}
 .tecnologias h2{
-  font-size: 30px;
+  font-size: var(--h3-desktop);
 }
 /* Estilos seccion proyectos */
-.secProyectos{
-  height: 600px;
-}
 .secProyectos h2{
-  font-size: 30px;
-}
-.proyectos{
-  justify-content: start;
-  width: 90%;
-  height: 70%;
-}
-.pro{
-  width: 33%;
-  height: 50%;
-}
-.pro img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  opacity: .8;
-  filter: grayscale(0.6);
+  font-size: var(--h3-desktop);
 }
 /* seccion contactame */
 /* boton */
 .enviar{
   left: 15%;
   width: 15%;
+  width: 150px;
+  height: 40px;
 }
+.enviar input{
+  font-size: var(--h5-desktop);
+}
+}
+
+/* Animación para las frases sobre mi */
+@keyframes desplazar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--slaider-element-width) * var(--slaider-elemento)));
+  }
+} 
+/* Animación para el slaider */
+@keyframes desplazar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--slaider-element-width) * var(--slaider-elemento)));
+  }
 }

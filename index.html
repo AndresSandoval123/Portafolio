@@ -7,7 +7,7 @@
   <title>Desarrollador</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="shortcut icon" href="https://i.postimg.cc/KzL9RDfQ/A-Post-en-Instagram-7-removebg-preview.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <main class="mainContainer">
@@ -33,133 +33,109 @@
       <section class="presentacion" id="presentacion">
         <img class="fondo" src="https://i.postimg.cc/htCmwVG2/960x0.webp" alt="fondo">
         <div class="sobreMi"><!-- Seccion sobre mi -->
-          <h1>¡HOLA! <br><span>Soy Andres Felipe Sandoval</span></h1>
-          <p>Apasionado por el desarrollo web.
-            Durante este recorrido, te daré a conocer un poco más de mí, los proyectos que estoy desarrollando y en los que he participado.</p>
+          <h1>HOLA <br><span>Soy Andres Sandoval</span></h1>
+          <p>Apasionado por el <br>
+            <div class="frases">
+              <div class="contentFrase">
+                <div class="frase">Desarrollo Web</div>
+                <div class="frase">Diseño UX/UI</div>
+                <div class="frase">Desarrollo Front-end</div>
+              </div>
+            </div> 
+          </p>
         </div>
-        <div class="vamos"> <!-- spam  -->
-          <samp>¡Vamos!</samp>
+        <div class="comencemos "> <!-- spam  -->
+          <span>¡Comencemos!</span>
         </div>
       </section>
+      
       <!-- Segunda seccion "Tecnologias" -->
       <section class="tecnologias" id="tecnologias">
         <div class="tituloTec">
-            <h2>TECNOLOGÍAS CONOCIDAS</h2>
+          <h2>TECNOLOGÍAS CONOCIDAS</h2>
         </div>
         <div class="tecContenido"> <!-- slaider -->
-          <div class="slaider" id="slaider">
-            <div class="itemSlaider ">
+          <ul class="slaider">
+            <li>
                 <img src="https://i.postimg.cc/bJK7RNnG/flowbite-html-solid.png" alt="HTML">
                 <p>HTML</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/1tnx6N8h/flowbite-css-solid.png" alt="CSS">
                 <p>CSS</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/q77HJF07/fluent-code-js-16-filled.png" alt="Javascript">
                 <p>Javascript</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/RZdzzBk8/mdi-bootstrap.png" alt="Bootstrap">
                 <p>Bootstrap</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/wBb87kTQ/fa6-brands-java.png" alt="Java">
                 <p>Java</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/rFSkQWQq/mdi-git.png" alt="Git">                        
                 <p>Git</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/65sKrzVH/fluent-mdl2-git-hub-logo.png" alt="Github">                        
                 <p>Github</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/P5TkcxRY/simple-icons-mysql.png" alt="MySQL">
                 <p>MySQL</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/HW8H8FMc/material-symbols-android.png" alt="App Inventor">
                 <p>App Inventor</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/SR9h0z47/hugeicons-trello.png" alt="Trello">          
                 <p>Trello</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/9MKhNY6Q/mage-photoshop.png" alt="Photoshop">                        
                 <p>Photoshop</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/cHrWmb5z/hugeicons-figma.png" alt="figma">
                 <p>figma</p>
-            </div>
-            <div class="itemSlaider ">
+            </li>
+            <li>
                 <img src="https://i.postimg.cc/JhTmjLKJ/raphael-video.png" alt="Edición">                        
                 <p>Edición</p>
-            </div>
-    </div>
-            <nav class="slaiderNavegacion">
-                <button class="izquierda" id="izquierda"><iconify-icon icon="mingcute:left-fill"></iconify-icon></button>
-                <button class="derecha" id="derecha"><iconify-icon icon="mingcute:right-fill"></iconify-icon></button>
-            </nav>
+            </li>
+          </ul>
         </div>
-    </section>
+      </section>
       <!-- Tercera seccion proyectos desarrollados -->
       <section class="secProyectos" id="secProyectos">
         <h2>PROYECTOS</h2>
-        <p>Selecciona el proyecto para obtener más información sobre él.</p>
-        <div class="proyectos"><!-- Proyectos -->
-        <div class="pro">
-          <img src="https://i.postimg.cc/k46g3kTD/app.jpg" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >App de asistencia</p>
-          <a href="https://github.com/AndresSandoval123" target="_blank">Saber más</a>
+        <p>Selecciona el proyecto para obtener una breve información.</p>
+        <div class="proyectos">
+          <div class="carrusel">
+            <div class="atras" id="atras">
+              <iconify-icon icon="mingcute:left-fill"></iconify-icon>
+            </div>
+            <div class="imagenes">
+              <div id="img" class="conImg">
+                <img class="img" src="https://i.postimg.cc/4x6y0ntX/jampa.png" alt="jampa">
+              </div>
+              <div class="texto" id="texto">
+                <h3>E-commerce</h3>
+                <p>Plataforma de comercio electrónico llamada "JAMPA shop".</p>
+              </div>
+            </div>
+            <div class="adelante" id="adelante">
+              <iconify-icon icon="mingcute:right-fill"></iconify-icon>
+            </div>
           </div>
+          <div class="puntos bold" id="puntos"></div>
         </div>
-
-        <div class="pro">
-          <img src="https://i.postimg.cc/fbBPvpKq/proyectos.jpg" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >Proyectos</p>
-          <a href="https://github.com/AndresSandoval123" target="_blank">Saber más</a>
-          </div>
-        </div>
-
-        <div class="pro">
-          <img src="https://i.postimg.cc/wvMG424q/logica.jpg" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >Ejercicos de logica</p>
-          <a href="https://github.com/AndresSandoval123" target="_blank">Saber más</a>
-          </div>
-        </div>
-
-        <div class="pro">
-          <img src="https://i.postimg.cc/gj6BmJP1/figma.png" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >wireframes</p>
-          <a href="https://github.com/AndresSandoval123" target="_blank">Saber más</a>
-          </div>
-        </div>
-
-        <div class="pro">
-          <img src="https://i.postimg.cc/yW4pdH1x/publicidad.png" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >Diseños de publicidad</p>
-          <a href="https://drive.google.com/file/d/1eT6JfLKdXZ9sGsGt1t4aiHX6Qc5E4OP-/view" target="_blank">Saber más</a>
-          </div>
-        </div>
-
-        <div class="pro">
-          <img src="https://i.postimg.cc/8kJ1jmkg/video.png" alt="Diseño de publicidad">
-          <div class="tex">
-          <p >Edición de video</p>
-          <a href="https://www.youtube.com/channel/UCSdf5ucv6I0PCGh3XKWeDPQ" target="_blank">Saber más</a>
-          </div>
-        </div>
-      </div>
+        <a class="btnTProyectos" href="./proyectos.html">Ver Todos los proyectos</a>
       </section>
       <!-- Cuarta seccion Formulario -->
       <section class="contacto" id="contacto">
@@ -197,15 +173,17 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="icoFooter">
-        <a href="https://www.linkedin.com/in/andres-sandoval-desarrollador/" target="_blank" ><iconify-icon icon="mingcute:linkedin-fill"></iconify-icon></a>
-        <p>Creado por Andres Sandoval</p>
-        <a href="https://github.com/AndresSandoval123" target="_blank"><iconify-icon icon="mdi:github"></iconify-icon></a>
+        <div class="aIconos">
+        <a target="_blank" href="https://www.linkedin.com/in/andres-sandoval-desarrollador/" target="_blank" ><iconify-icon icon="mingcute:linkedin-fill"></iconify-icon></a>
+        <a target="_blank" href="https://github.com/AndresSandoval123" target="_blank"><iconify-icon icon="mdi:github"></iconify-icon></a>
+      </div>
+      <p>Creado por Andres Sandoval</p>
       </div>
     </footer>
   </main>
 
   <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script> <!-- iconos especiales -->
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 
 </html>
