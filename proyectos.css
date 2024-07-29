@@ -13,15 +13,31 @@
   align-items: center;
   color: var(--gold);
   width: 100%;
-  position: relative;
 }
-header a{
-  position: absolute;
-  bottom:5%;
-  right: 5%;
-  text-decoration: none;
+.btnVolver{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+}
+.btnVolver a{
+  background-color: var(--grey);
   color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  width: 110px;
+  height: 100%;
   cursor: pointer;
+  text-decoration: none;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.btnVolver a:hover{
+  outline: 1px solid;
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
 }
 /* Estilo para seccion ecommerce,wireframes,publicidad,app y logica */
 .ecommerce, .wireframes, .publicidad, .app, .logica{
@@ -47,7 +63,7 @@ header a{
   text-align: center;
   font-size: var(--h5-movil);
 }
-/* Estilos contenedos de la imagenes */
+/* Estilos contenedor de la imagenes */
 .imagenes{
   width: 100%;
   height: 280px;
@@ -67,21 +83,25 @@ header a{
   transition: all 1s;
   background-color: var(--grey);
   transform: scale(2) translate(25%, 25%);
+  object-fit: contain;
 }
 .img2:hover{
   transition: all 1s;
   background-color: var(--grey);
   transform: scale(2) translate(25%, -25%);
+  object-fit: contain;
 }
 .img3:hover{
   transition: all 1s;
   background-color: var(--grey);
   transform: scale(2) translate(-25%, 25%);
+  object-fit: contain;
 }
 .img4:hover{
   transition: all 1s;
   transform: scale(2) translate(-25%, -25%);
   background-color: var(--grey);
+  object-fit: contain;
 }
 /* estilos para tecEmpleadas, herramienta */
 .tecEmpleadas, .herramienta{
@@ -130,17 +150,54 @@ header a{
   padding: 10px;
 }
 .btnSaber a{
-  background-color: var(--grey);
+  background-color: var(--gold);
   text-decoration: none;
   cursor: pointer;
   height: 100%;
   padding: 5px;
   border-radius: 15px;
-  color: var(--white);
+  color: var(--black);
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .btnSaber a:hover{
   outline: 1px solid;
   outline-offset: 15px;
   outline-color: rgba(255, 255, 255, 0);
+}
+@media (min-width: 768px){
+/* Estilos contenedor de la imagenes */
+.imagenes{
+  height: 500px;
+}
+}
+@media (min-width: 1024px){
+/* Estilo para los titulos en general de cada seccion y parrafos*/
+.titulo{
+  font-size: var(--h2-desktop);
+}
+.encabezado p{
+  font-size: var(--h5-desktop);
+}
+/* Estilo contenedor de las imagenes */
+.imagenes img{
+  padding: 3px;
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: top;
+}
+/* estilos para tecEmpleadas, herramienta */
+.tecEmpleadas h3, .herramienta h3{
+  font-size: var(--h3-desktop);
+}
+.herramienta p{
+  font-size: var(--h4-desktop);
+}
+.front p, .back p{
+  font-size: var(--h3-desktop);
+}
+.front li, .back li, .empleadas li{
+  font-size: var(--h5-desktop);
+}
 }

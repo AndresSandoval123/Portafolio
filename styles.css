@@ -528,7 +528,6 @@ body {
 .enviar input:active{
   transform: scale(1.5);
 }
-
 /* Footer */
 .footer {
   background-color: var(--grey);
