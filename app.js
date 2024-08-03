@@ -31,32 +31,32 @@ for (let i = 0; i < slaiderElementoDisplayed; i++) {
 
 let imagenes = [
   {
-    url: 'https://i.postimg.cc/4x6y0ntX/jampa.png',
+    url: './img/proyectos/jampa1.webp',
     nombre: 'E-commerce',
     descripcion: 'Plataforma de comercio electrónico llamada "JAMPA shop".'
   },
   {
-    url: 'https://i.postimg.cc/LsSP3D2T/Wireframespng.png',
+    url: './img/proyectos/Wireframes1.webp',
     nombre: 'Wireframes',
     descripcion: 'Creados en Figma para diseñar interfaces y prototipos.'
   },
   {
-    url: 'https://i.postimg.cc/SQ651MNZ/Collage-de-Fotos-Jugueteria-Colorido-Blanco.png',
+    url: './img/proyectos/publicidad1.webp',
     nombre: 'Diseños de publicidad',
     descripcion: 'Creo diseños que capturan la atención y comunican mensajes efectivos.'
   },
   {
-    url: 'https://i.postimg.cc/8kJ1jmkg/video.png',
+    url: './img/proyectos/video.webp',
     nombre: 'Creación de video',
     descripcion: 'Desde la planificación hasta la producción y edición.'
   },
   {
-    url: 'https://i.postimg.cc/k46g3kTD/app.jpg',
+    url: './img/proyectos/app1.webp',
     nombre: 'App de asistencia',
     descripcion: 'Desarrolle una app de asistencia para agilizar dicho proceso.'
   },
   {
-    url: 'https://i.postimg.cc/wvMG424q/logica.jpg',
+    url: './img/proyectos/logica1.webp',
     nombre: 'Ejercicios de logica',
     descripcion: 'Desarrollo ejercicios para mejorar  mis habilidades analíticas y de resolución de problemas.'
   }

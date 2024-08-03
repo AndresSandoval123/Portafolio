@@ -273,7 +273,7 @@ body {
   width: 50%;
 }
 .slaider li:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 /* Estilos seccion proyectos */
 .secProyectos{
