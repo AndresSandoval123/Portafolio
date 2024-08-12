@@ -28,10 +28,11 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--black);
+  background-color: rgb(70, 69, 69);
 }
 /* Contenedor principal*/
 .mainContainer {
+  background-color: var(--black);
   display: flex;
   position: relative;
   flex-direction: column;
@@ -39,7 +40,7 @@ body {
   width: 100vw;
   max-width: 1440px;/* Se va adaptar a una resolucion maxima de 1440 por ancho */
   min-height: 100vh;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 /* Estilos contenido general */
 .content {
@@ -405,8 +406,8 @@ body {
   color: var(--gold);
 }
 .btnTProyectos{
-  background-color: var(--grey);
-  color: var(--white);
+  background-color: var(--gold);
+  color: var(--black);
   width: 200px;
   height: 35px;
   font-size: var(--h5-movil);
@@ -415,13 +416,10 @@ body {
   text-align: center;
   place-content: center;
   cursor: pointer;
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s;
 }
 .btnTProyectos:hover{
-  color: var(--gold);
-  outline: 1px solid;
-  outline-offset: 15px;
-  outline-color: rgba(255, 255, 255, 0);
+  
 }
 /* Cuarta seccion Formulario */
 .contacto{
@@ -441,9 +439,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
   object-fit: cover;
-  z-index: -1;
   mask-image: linear-gradient(0deg, black 71%, transparent);
 }
 .formulario{
@@ -635,7 +631,6 @@ display: none;
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
   object-fit: cover;
 }
 .formulario{
